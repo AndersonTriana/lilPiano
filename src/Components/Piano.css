@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano {
+    display: flex;
+    background-color: black;
+    width: 1000px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.key {
+    width: 60px;
+    height: 200px;
+    color: blanchedalmond;
+    border-radius: 20px;
+    border-style: none;
+    border: solid 5px black;
+}
