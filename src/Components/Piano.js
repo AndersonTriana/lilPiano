@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Key from './Key';
+import Notes from '../Data/Notes';
+import * as Tone from 'tone';
 import './Piano.css';
 
-const Notes = [
-    'nota 1' , 'nota 2', 'nota 3'
-]
+class Piano extends Component {
+    Play(name) {
+        const synth = new Tone.Synth().toDestination();
 
-function Piano() {
-    const keys = Notes.forEach( note =>
-        {return <Key></Key>}
-    );
-    
-    console.log(keys)
-    return(
-        <div className="piano">
-            <Key></Key>
-        </div>
-    );
+        Tone.now();
+        synth.triggerAttackRelease(name, "8n");
+    }
+
+    render() {
+        const keys = Notes.map(note => {
+            console.log(note);
+            return <Key key={note.note} name={note.note} play={this.Play} keyboard={note.key}></Key>
+        });
+
+        return (
+            <div className="piano">
+                {keys}
+            </div>
+        );
+    }
+
 }
 
 export default Piano;
