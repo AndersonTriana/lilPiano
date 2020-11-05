@@ -3,22 +3,17 @@ import * as Tone from 'tone';
 
 function Key(props) {
     return (
-        <button
+        <div
             className="key"
             name={props.keyboard}
+            tabIndex="0"
             
             onClick={() => {
                 Tone.start();
-                props.play(props.name);
+                props.play(props.note);
             }}
-
-            onKeyPress={event => {
-                if (event.key === event.target.name) {
-                    Tone.start();
-                    props.play(props.name);
-                }
-            }}
-        ></button>
+            
+        ></div>
     );
 }
 

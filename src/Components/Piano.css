@@ -2,23 +2,102 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: radial-gradient(circle at 65.95% 50%, #839dff 0, #3765d2 50%, #003179 100%);
+}
+
+.piano-container {
+    margin-top: 100px;
+    background-image: radial-gradient(circle at 79.12% 66.81%, #443739 0, #362f31 25%, #272727 50%, #191f1d 75%, #0a1713 100%);
+
+    padding: 0px 3px 5px 3px;
+    border: solid 3px #272727;
+    border-radius: 10px;
+    font-family: 'Fugaz One', cursive;
+    color: antiquewhite;
+}
+
+.piano-decoration {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 10px;
+    margin-left: 5px;
+    width: 100px;
 }
 
 .piano {
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #272727;
-    height: 200px;
+    height: 120px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 2px 0 2px;
 }
 
 .key {
-    width: 60px;
-    height: 200px;
+    z-index: 2;
+    width: 40px;
+    height: 120px;
+    background-color: antiquewhite;
     color: blanchedalmond;
     border-radius: 10px;
     border-style: none;
-    border: solid 3px #272727;
+    border: solid 2px #272727;
+}
+
+.line1 {
+    z-index: 1;
+    position: fixed;
+    height: 190px;
+    width: 5px;
+    background-color: chartreuse;
+    margin-top: -185px;
+    margin-left: 282px;
+}
+
+.line2 {
+    z-index: 1;
+    position: fixed;
+    height: 190px;
+    width: 5px;
+    background-color: salmon;
+    margin-top: -185px;
+    margin-left: 287px;
+}
+
+.line3 {
+    z-index: 1;
+    position: fixed;
+    height: 190px;
+    width: 5px;
+    background-color: cornflowerblue;
+    margin-top: -185px;
+    margin-left: 292px;
+}
+
+.modules {
+    z-index: 2;
+    margin-right: 40px;
+    margin-top: 2px;
+    padding: 0;
+}
+
+input[type='range'] {
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: antiquewhite;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #272727;
+    box-shadow: -80px 0 0 80px cornflowerblue;
 }
